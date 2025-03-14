@@ -384,10 +384,15 @@ SELECT COUNT(*) FROM TB_IDX_TEST; --100만개 행이 삽입됨을 확인
 
 /* 인덱스 사용 X */
 -- TEST_ID가 'TEST500000'인 행 조회하기
+SELECT * FROM TB_IDX_TEST
+WHERE TEST_ID = 'TEST500000'; --0.023S
 
 /* 인덱스 사용 O */
 --TEST_NO가 500000인 행 조회하기
+SELECT * FROM TB_IDX_TEST
+WHERE TEST_NO = 500000; --0.001S
 
+-- 보통 10~30배 차이
 
 
 
