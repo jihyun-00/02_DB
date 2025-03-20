@@ -27,8 +27,26 @@ CREATE USER khshop IDENTIFIED BY kh1234;
 GRANT CONNECT, RESOURCE TO khshop;
 ALTER USER khshop DEFAULT TABLESPACE SYSTEM QUOTA UNLIMITED ON SYSTEM;
 
+<<<<<<< Updated upstream
 -----------------------------------------------------------------------
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 CREATE USER todo IDENTIFIED BY list;
 GRANT CONNECT, RESOURCE TO todo;
 ALTER USER todo DEFAULT TABLESPACE SYSTEM QUOTA UNLIMITED ON SYSTEM;
+=======
+----------------------------------------------------------------------------------------
+
+
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+CREATE USER khshop IDENTIFIED BY kh1234;
+GRANT CONNECT, RESOURCE TO khshop;
+ALTER USER khshop DEFAULT TABLESPACE SYSTEM QUOTA UNLIMITED ON SYSTEM;
+
+----------------------------------------------------------------------------------------
+
+
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+CREATE USER workbook IDENTIFIED BY workbook;
+GRANT CONNECT, RESOURCE TO workbook;
+ALTER USER workbook DEFAULT TABLESPACE SYSTEM QUOTA UNLIMITED ON SYSTEM;
+>>>>>>> Stashed changes
