@@ -45,11 +45,24 @@ VALUES('user01', 'DB 숙제', 'DB option 예제문제 풀기', DEFAULT, DEFAULT 
 INSERT INTO TB_TODO
 VALUES('user02', '코딩', '투두리스트 풀기', DEFAULT, DEFAULT );
 
+
 UPDATE TB_TODO
 SET TODO_TITLE = '코딩하기',
-TODO_CONTENT = '투두리스트 완료하기'
+    TODO_CONTENT = '투두리스트 완료하기'
 WHERE MEMBER_ID = 'user02'
-AND ROW_NUM = 1;
+  AND ROWID = (
+      SELECT ROWID
+      FROM (
+          SELECT ROWID, ROW_NUMBER() OVER (ORDER BY WRITE_DATE) AS ROW_NUM
+          FROM V_TODO
+          WHERE MEMBER_ID = 'user02'
+      )
+      WHERE ROW_NUM = 1
+  );
+
+
+
+
 
 
 
