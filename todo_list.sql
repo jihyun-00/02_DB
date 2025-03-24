@@ -88,7 +88,7 @@ SELECT * FROM V_MEMBER;
 SELECT * FROM V_TODO
 WHERE MEMBER_ID = 'user01';
 
-DROP VIEW V_MEMBER;
+DROP VIEW V_TODO;
 
 -----------------------------------------------------------------------------------------
 
