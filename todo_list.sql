@@ -100,7 +100,7 @@ SELECT
     COMPLETE_YN, 
     WRITE_DATE
 FROM TB_TODO
-WHERE MEMBER_ID='user03';
+WHERE MEMBER_ID='user02';
 
 -----------------------------------------------------------------------------------------
 
