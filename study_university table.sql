@@ -31,7 +31,7 @@ CREATE TABLE TB_DEPARTMENT(
 -- 강좌는 강좌번호, 분반번호, 강의하는 교수, 강좌이름, 강의요일, 강의교시,
 -- 취득학점 (1~4), 강좌시간 (1~6), 개설 학과, 강의실 정보가 필요하다.
 Create table tb_lecture(
-Lct_id varchar2(45),
+Lct_id varchar2(45) PRIMARY,
 Class_id varchar2(45),
 Prof_id varchar2(45),
 Lct_name varchar2(45),
@@ -39,7 +39,7 @@ Lct_day char(1),
 Lct_period NUMBER,
 Credit NUMBER CHECK (Credit IN (1, 2, 3, 4)),
 Lct_hour NUMBER (Lct_hour IN (1, 2, 3, 4, 5, 6)),
-Dept_id varchar2(45),
+Dept_code varchar2(45),
 Lct_room varchar2(45)
 );
 
@@ -47,7 +47,7 @@ Lct_room varchar2(45)
 -- 출석점수, 중간고사점수, 기말고사점수, 기타 점수, 총점 (0 ~ 100), 평점 (A ~ F) 정보를 가진다.
 Create table tb_lecture_list(
 Std_id varchar2(45),
-Lct_no varchar2(45) ,
+Lct_id varchar2(45) ,
 Prof_id varchar2(45),
 Absence NUMBER,
 Middle_scr NUMBER,
@@ -61,7 +61,7 @@ grade char(1) CHECK (grade IN ('A', 'B', 'C', 'D', 'E', 'F')
 -- 동아리는 동아리 번호, 동아리 이름, 소속 학생 숫자, 회장 학생 정보,
 -- 동아리 지도 교수 정보, 동아리방 정보 등을 가져야 한다.
 Create table tb_club(
-C_id NUMBER,
+C_id NUMBER PRIMARY,
 C_name varchar2(45),
 Std_total NUMBER,
 Boss_id varchar2(45),
