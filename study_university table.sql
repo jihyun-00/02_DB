@@ -21,7 +21,7 @@ CREATE TABLE TB_STUDENT(
 -- 학과는 학과번호를 부여하여 식별하며 학과명, 학과전화번호, 학과사무실 정보를 가진다. 해당 학과에서 개설하는 강좌가 반드시 1개 이상 존재해야 하며, 동시에 학과장이 1명 있어야 한다.
 -- 강좌테이블에서 학과코드 참조
 CREATE TABLE TB_DEPARTMENT(
-		DEPT_COD VARCHAR2(45) PRIMARY KEY,
+		DEPT_CODE VARCHAR2(45) PRIMARY KEY,
 		DEPT_TITLE VARCHAR2(45) NOT NULL,
 		DEPT_TEL VARCHSR2(45) NOT NULL,
 		DEPT_OFFICE VARCHAR2(45),
@@ -75,9 +75,9 @@ Room_id varchar2(45)
 -- 납부 총액이 등록금 총액 보다 작을 경우에는 수강내역 “신규 삽입”에서 “등록금 미납”오류를 표시해야 한다.
 Create table tb_tuition(
 Std_id varchar2(45),
-Year NUMBER,
-Semester NUMBER,
+PAY_YEAR NUMBER,
+PAY-SEMESTER NUMBER,
 Total NUMBER,
 Pay_total NUMBER,
-Pay_date date sysdate
+LAST_Pay_date date sysdate
 );
